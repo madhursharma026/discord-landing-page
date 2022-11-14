@@ -7,14 +7,16 @@ import styles from '../../styles/Header.module.css';
 
 function Header() {
 
-    const [position, setPosition] = useState("")
     const [visible, setVisible] = useState(true)
+    const [position, setPosition] = useState("")
 
     useEffect(() => {
         const handleScroll = () => {
+            setPosition(window.pageYOffset)
             let moving = window.pageYOffset
-            setVisible(position > moving);
+            setVisible(position > moving || position < 120);
             setPosition(moving)
+            console.log(window.scrollTop)
         };
         window.addEventListener("scroll", handleScroll);
         return (() => {
