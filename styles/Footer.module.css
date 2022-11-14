@@ -1,0 +1,20 @@
+.footer_options{
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+.footer_options_second{
+    font-size: 14px;
+    text-decoration: underline;
+    color: white;
+}
+
+.footer_options_second:hover{
+    text-decoration: none;
+    color: white;
+}
+.footer_options:hover{
+    text-decoration: underline;
+    color: white;
+}

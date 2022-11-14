@@ -10,9 +10,9 @@ export default function Home() {
   return (
     <>
       <Header />
-      <div style={{ marginTop: "65px" }}>
+      {/* <div style={{ marginTop: "65px" }}> */}
         <HeaderSection />
-      </div>
+      {/* </div> */}
       <ImageContent1 />
       <ContentImage1 />
       <ImageContent2 />

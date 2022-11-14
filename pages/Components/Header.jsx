@@ -1,40 +1,29 @@
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
+import Link from 'next/link'
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Link from 'next/link'
+import Container from 'react-bootstrap/Container';
 import React, { useEffect, useState } from "react";
-import styles from '../../styles/Header.module.css'
+import styles from '../../styles/Header.module.css';
 
 function Header() {
-    const [loading, setLoading] = useState(false)
-    const [windowHeight10OK, setWindowHeight10OK] = useState(false);
-    const [windowHeight0OK, setWindowHeight0OK] = useState(false);
+
+    const [position, setPosition] = useState("")
+    const [visible, setVisible] = useState(true)
 
     useEffect(() => {
-        if (typeof window !== "undefined") {
-            window.addEventListener("scroll", () => {
-                setWindowHeight10OK(window.pageYOffset > 80)
-                if (window.scrollY < (80)) {
-                    console.log("Madhur Shar,a")
-                    setLoading(false)
-                }
-            }
-            );
-        }
-    });
-
-    useEffect(() => {
-        if (windowHeight10OK) {
-            setLoading(true)
-        }
-    });
-
+        const handleScroll = () => {
+            let moving = window.pageYOffset
+            setVisible(position > moving);
+            setPosition(moving)
+        };
+        window.addEventListener("scroll", handleScroll);
+        return (() => {
+            window.removeEventListener("scroll", handleScroll);
+        })
+    })
 
     return (
-        <Navbar className={`py-3 fixed-top ${loading ? styles.animationStyle2 : styles.animationStyle1}`} expand="lg" style={{ background: "#404EED" }}>
+        <Navbar className={`py-3 fixed-top ${visible ? styles.animationStyle1 : styles.animationStyle2}`} expand="lg" style={{ background: "#404EED" }}>
             <Container>
                 <Navbar.Brand>
                     <Link href='/'>
@@ -63,3 +52,6 @@ function Header() {
 }
 
 export default Header;
+
+
+

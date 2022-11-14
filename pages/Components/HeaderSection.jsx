@@ -6,7 +6,8 @@ function HeaderSection() {
 
     return (
         <>
-            <div className='px-lg-0 px-4' style={{ background: "url('https://theme.zdassets.com/theme_assets/678183/b7e9dce75f9edb23504e13b4699e208f204e5015.png')", backgroundRepeat: "no-repeat", backgroundSize: "100% 550px" }}>
+            <div style={{ background: "#404EED", height: '80px' }}></div>
+            <div className='px-lg-0 px-4' style={{ background: "url('https://theme.zdassets.com/theme_assets/678183/b7e9dce75f9edb23504e13b4699e208f204e5015.png')", backgroundRepeat: "no-repeat", backgroundSize: "100% 600px" }}>
                 <h1 className={`text-lg-center ${styles.main_heading}`} style={{ fontFamily: "Whitney, Helvetica, Neue, elvetica, Arial, sans-serif", fontWeight: '800', color: "white" }}>IMAGINE A PLACE...</h1>
                 <div className={`text-lg-center text-white ${styles.sub_heading}`}>
                     ...where you can belong to a school club, a gaming group, or a worldwide art community. Where just you and a handful of friends can spend time together. A place that makes it easy to talk every day and hang out more often.
